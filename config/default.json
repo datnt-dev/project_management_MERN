@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://datnt:1@projectmanagement-getqr.gcp.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "ConCaVangMauXanhLaCay"
+}
