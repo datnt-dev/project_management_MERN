@@ -242,7 +242,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
     // Check comment exist
     if (!comment) {
-      return res.status(404).json({ msg: ' Bình luận không tồn tại hoặc đã bị xóa' });
+      return res.status(404).json({ msg: 'Bình luận không tồn tại hoặc đã bị xóa' });
     }
 
     // Check User
