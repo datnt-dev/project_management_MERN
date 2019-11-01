@@ -25,6 +25,7 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.7",
+    "nodemon": "^1.19.4",
     "request": "^2.88.0"
   }
 }
