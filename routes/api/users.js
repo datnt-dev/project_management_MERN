@@ -5,6 +5,7 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const auth = require('../../middleware/auth');
 
 const User = require('../../models/User');
 
@@ -78,5 +79,22 @@ router.post('/', [
     res.status(500).send('Server Error');
   }
 });
+/**
+ * @route DELETE /api/users
+ * @desc delete user
+ * @access Private
+ */
+router.delete('/', auth, async (req, res) => {
+  try {
+    await User.findOneAndRemove({_id: req.user.id});
+
+    res.json({msg: 'Xóa tài khoản thành công'});
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 
 module.exports = router;
